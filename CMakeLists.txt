@@ -27,5 +27,8 @@ add_executable(image_converter src/image_converter.cpp)
 target_link_libraries(image_converter ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 
+add_executable(circle_finder src/circle_finder.cpp)
+target_link_libraries(circle_finder ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+
 add_executable(color_requester src/color_requester.cpp)
 target_link_libraries(color_requester ${catkin_LIBRARIES})
