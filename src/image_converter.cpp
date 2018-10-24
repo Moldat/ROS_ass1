@@ -5,6 +5,8 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include "opencv2/opencv.hpp"
+#include <string>
+#include <ros/package.h>
 
 static const std::string OPENCV_WINDOW = "Image window";
 
@@ -61,8 +63,20 @@ public:
 int main(int argc, char** argv)
 {
   ros::init(argc, argv, "image_converter");
-  ImageConverter ic;
-  // cv::Mat src = imread( "imageName", cv::IMREAD_COLOR );
+ // ImageConverter ic;
+  std::cout<<"alex"<<std::endl;
+  std::string image = ros::package::getPath("ROS_ass1") + "/src/colors.jpg";
+  
+   cv::Mat src = imread( image, cv::IMREAD_COLOR );
+
+   if( src.empty() )
+    {
+        std::cerr<<"Invalid input image\n";
+        std::cerr<<image<<std::endl;
+        
+        return -1;
+    }
+
   ros::spin();
   return 0;
 }
