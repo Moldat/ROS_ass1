@@ -60,7 +60,7 @@ class SubscribeAndPublish{
 	            strRGB.append(intToHEX(B));
 	            if (!colorDic[strRGB].compare(color))
 	            {
-		 	  		ROS_ass1::cords_rad msg;
+	            	ROS_ass1::cords_rad msg;
 		        	msg.x = center.x;
 		        	msg.y = center.y;
 		        	msg.r = radius;
