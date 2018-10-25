@@ -60,12 +60,12 @@ class SubscribeAndPublish{
 	            strRGB.append(intToHEX(B));
 	            if (!colorDic[strRGB].compare(color))
 	            {
-	            	ROS_ass1::cords_rad msg;
-		        	msg.x = center.x;
-		        	msg.y = center.y;
-		        	msg.r = radius;
-		            ros::Publisher cords_rad_pub = nh.advertise<ROS_ass1::cords_rad>("cords_rad",1000);  
-		            ros::Rate loop_rate(10);
+					ROS_ass1::cords_rad msg;
+					msg.x = center.x;
+					msg.y = center.y;
+					msg.r = radius;
+					ros::Publisher cords_rad_pub = nh.advertise<ROS_ass1::cords_rad>("cords_rad",1000);  
+					ros::Rate loop_rate(10);
 		            while (ros::ok())
 		            {
 		                cords_rad_pub.publish(msg);
